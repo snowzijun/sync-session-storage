@@ -1,28 +1,30 @@
 {
-  "name": "zj-sync-session",
+  "name": "sync-session-storage",
   "version": "1.0.0",
   "description": "浏览器标签页同步sessionStorage",
   "main": "lib/index.js",
-  "types": "types/index.d.ts",
   "module": "es/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib",
-    "es",
-    "types"
+    "es"
   ],
   "scripts": {
     "start": "npm run dev",
     "dev": "tsc -w",
     "build": "npm run build:lib && npm run build:es",
-    "build:lib": "tsc --module umd --declaration --declarationDir types --outDir lib",
-    "build:es": "tsc --module es6 --declaration --declarationDir types --outDir es",
+    "build:lib": "tsc -p tsconfig.json --module umd  --outDir lib",
+    "build:es": "tsc -p tsconfig.json --module es2015 --declaration false --outDir es",
     "lint": "eslint ./src --fix --ext .ts,.tsx "
   },
   "repository": {
     "type": "git",
-    "url": "http://192.168.113.29/fengc/zj-sync-session.git"
+    "url": "https://github.com/snowzijun/sync-session-storage"
   },
-  "keywords": ["sessionStorage", "localStorage"],
+  "keywords": [
+    "sessionStorage",
+    "localStorage"
+  ],
   "author": "冯超",
   "license": "MIT",
   "devDependencies": {
