@@ -48,6 +48,7 @@ const generateUUID = (): string => {
 // 添加心跳，30秒更新一次
 const HEARTBEAT_KEY_VALUE = KEY_ENUMS.HEARTBEAT_KEY + '_' + generateUUID()
 const addHeartBeat = (): void => {
+  localStorage.setItem(HEARTBEAT_KEY_VALUE, `${Date.now()}`)
   setInterval(() => {
     localStorage.setItem(HEARTBEAT_KEY_VALUE, `${Date.now()}`)
   }, 1000 * 30)
@@ -96,7 +97,7 @@ const isOnlyPage = (): boolean => {
         }
       }
 
-      if (count > 1) {
+      if (count > 0) {
         return false
       }
     }

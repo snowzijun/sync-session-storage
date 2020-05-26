@@ -1,6 +1,6 @@
 {
   "name": "sync-session-storage",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "浏览器标签页同步sessionStorage",
   "main": "lib/index.js",
   "module": "es/index.js",

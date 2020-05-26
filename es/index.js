@@ -34,6 +34,7 @@ var generateUUID = function () {
 // 添加心跳，30秒更新一次
 var HEARTBEAT_KEY_VALUE = KEY_ENUMS.HEARTBEAT_KEY + '_' + generateUUID();
 var addHeartBeat = function () {
+    localStorage.setItem(HEARTBEAT_KEY_VALUE, "" + Date.now());
     setInterval(function () {
         localStorage.setItem(HEARTBEAT_KEY_VALUE, "" + Date.now());
     }, 1000 * 30);
