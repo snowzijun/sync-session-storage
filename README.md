@@ -4,17 +4,17 @@
 #### 安装
 
 ```shell
-npm install zj-sync-session -S
+npm install sync-session-storage -S
 ```
 或
 ```shell
-yarn add zj-sync-session
+yarn add sync-session-storage
 ```
 
 
 #### 示例
 ```javascript
-import sessionSync from 'zj-sync-session'
+import sessionSync from 'sync-session-storage'
 /**
  * 对要同步的session进行处理，如对不需要同步的数据进行过滤，可不实现此钩子函数
  * 此钩子函数

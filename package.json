@@ -1,6 +1,6 @@
 {
   "name": "sync-session-storage",
-  "version": "1.0.0",
+  "version": "0.0.9",
   "description": "浏览器标签页同步sessionStorage",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -13,8 +13,9 @@
     "start": "npm run dev",
     "dev": "tsc -w",
     "build": "npm run build:lib && npm run build:es",
-    "build:lib": "tsc -p tsconfig.json --module umd  --outDir lib",
+    "build:lib": "tsc -p tsconfig.json --module umd --outDir lib",
     "build:es": "tsc -p tsconfig.json --module es2015 --declaration false --outDir es",
+    "build:babel": "babel src --out-dir lib --extensions .ts",
     "lint": "eslint ./src --fix --ext .ts,.tsx "
   },
   "repository": {
@@ -28,9 +29,15 @@
   "author": "冯超",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-optimize-starts-with": "^1.0.1",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-babel": "^5.3.0",

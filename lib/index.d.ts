@@ -1,7 +1,3 @@
-export declare enum KEY_ENUMS {
-    GET_SESSION = "__zj_get_session",
-    SYNC_SESSION = "__zj_sync_session"
-}
 declare type SESSION_RESULT = {
     [key: string]: string | null;
 };
